@@ -122,7 +122,7 @@ describe('Sample TestCase', () => {
 
     });
 
-    it.only('Verify facebook title starts with "Facebook"', async () => {
+    it('Verify facebook title starts with "Facebook"', async () => {
 
         /* 
         1. Launch chrome browser
