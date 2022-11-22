@@ -62,7 +62,7 @@
 
         // 7. select FEMALE gender and verify it
         if(!isFemaleGenderSelected) {
-            genderFemale.click();
+            await genderFemale.click();
             const isFemaleGenderSelected = await genderFemale.isSelected();
             expect(isFemaleGenderSelected, 'Female gender IS NOT selected').to.be.true;
             await browser.pause(1000);

@@ -1,4 +1,5 @@
 const { expect } = require("chai");
+const { it } = require("mocha");
 
 describe('WebElements Test cases', () => {
 
@@ -89,7 +90,7 @@ describe('WebElements Test cases', () => {
             // 1. Launch facebook.com 
             await browser.url('/');
     
-            // 2. click on log in button
+            // 2. click on Create new account button
             const createNewAccountButton = await $('=Create new account');
             createNewAccountButton.click();
     
