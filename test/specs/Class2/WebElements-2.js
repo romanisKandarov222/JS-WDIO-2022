@@ -5,7 +5,7 @@
   
 tag -> tag1
 attribute of tag1 -> att1, attr2, attr3, attr4, attr5, att6
-NOTE: attribute-names CANNOT have spaces
+//! NOTE: attribute-names CANNOT have spaces
   
 tag1 has text = My Text value
   
@@ -39,19 +39,19 @@ text-value of tag1 -> no text with tag1
 */
 
 /**
-Locators: way to reach/find webElement
+//* Locators: way to reach/find webElement
   
-1. Using id-attribute
+1. //! Using id-attribute
     id-attribute is always going to be unique in the DOM
-    To check if id-value is unique, In chropath -> //*[@id='idValue'] - $ - find element function
+    To check if id-value is unique, In chropath -> //*  //[@id='idValue']
   
     const webElement = await $('#idValue');
   
     eg:
     const loginEmailInputBox = await $('#email');
   
-2. Using other attribute's value instead id-attribute
-    To check if any attribute has unique value or not, In chropath -> //tagName[@attrName='attrValue']
+2. //! Using other attribute's value instead id-attribute
+    To check if any attribute has unique value or not, In chropath -> //*  //tagName[@attrName='attrValue'] 
     NOTE: Attribute's value CANNOT have spaces
   
     const webElement = await $('tagName[attrName=attrValue]')
@@ -59,41 +59,41 @@ Locators: way to reach/find webElement
     eg:
     const loginButton = await $('button[name=login]');
   
-3. Using linkText (can be used only for links)
-    To check if linkText is unique or not, In chropath -> //a[text()='Link Text']
+3. //! Using linkText (can be used only for links)
+    To check if linkText is unique or not, In chropath -> //*  //a[text()='Link Text']
   
     const webElement = await $('=Link Text')
   
     eg:
     const linkButton = await $('=Create New Account');
   
-4. Using partial linkText (can be used only for links)
-    To check if partial linkText is unique or not, In chropath -> //a[contains(text() , 'partial Link Text')]
+4. //! Using partial linkText (can be used only for links)
+    To check if partial linkText is unique or not, In chropath -> //*  //a[contains(text() , 'partial Link Text')]
   
     const webElement = await $('*=partial link text')
   
     eg:
     const linkButton = await $('*=te N');
   
-5. Using other attribute's partial value instead id-attribute
-    To check if any attribute has unique partial-value or not, In chropath -> //tagName[contains(@attrName , 'partialAttrValue')]
+5. //! Using other attribute's partial value instead id-attribute
+    To check if any attribute has unique partial-value or not, In chropath -> //*  //tagName[contains(@attrName , 'partialAttrValue')]
     NOTE: Attribute's value CANNOT have spaces
   
     const webElement = await $('tagName[attrName*=partialAttrValue]')
   
-6. Using text value
-    To check if the text value is unique or not, In chropath -> //tagName[text() = 'text value']
+6. //! Using text value
+    To check if the text value is unique or not, In chropath -> //*  //tagName[text() = 'text value']
   
     const webElement = await $('tagName=text value')
   
-7. Using partial text value
-    To check if the partial text value is unique or not, In chropath -> //tagName[contains(text() , 'partial text value')]
+7. //! Using partial text value
+    To check if the partial text value is unique or not, In chropath -> //*  //tagName[contains(text() , 'partial text value')]
   
     const webElement = await $('tagName*=partial text value')
 */
 
 /**
-Steps to interact with webElement:
+//! Steps to interact with webElement:
 1. Find the unique locator strategy to find webElement
 2. Based on the strategy, use respect code to find webElement
 3. once webElement is found, interact with webElement
@@ -104,30 +104,30 @@ function -> $
 */
 
 /**
-Interactions:
+//! Interactions:
 1. To click on a particular webElement
-    function: click()
+    //*  function: click()
   
 2. To type in a particular webElement
-    function: setValue()
+    //*  function: setValue()
     input: String input which we want to type in the webElement
   
 3. To find if a particular webElement is enabled or not
-    function: isEnabled()
+    //*  function: isEnabled()
         if webElement is enabled
             function returns true
         otherwise
             function returns false
    
 4. To find if a particular webElement is displayed or not
-    function: isDisplayed()
+    //*  function: isDisplayed()
         if webElement is displayed
             function returns true
         otherwise
             function returns false
   
 5. To find if a particular webElement is selected or not
-    function: isSelected()
+    //*  function: isSelected()
         if webElement is selected
             function returns true
         otherwise
@@ -135,10 +135,10 @@ Interactions:
 */
 
 /**
-Links:
-    always have a-tag
-    text of a-tag (link) is known as linkText
-    value of href-attribute defines where user will land after clicking the link.
+//! Links:
+    - always have a-tag
+    - text of a-tag (link) is known as linkText
+    - value of href-attribute defines where user will land after clicking the link.
   
   
 <a href="https://www.oculus.com/" title="Learn more about Oculus" target="_blank">Oculus</a>
