@@ -82,7 +82,34 @@ describe('Practice test cases:', () => {
         const isGenderErrorMsgDisplayed = await genderErrorMsg.isDisplayed();
         expect(isGenderErrorMsgDisplayed, 'Gender msg is NOT displayed').to.be.true;
         await browser.pause(2000);
-    })    
+    });    
+
+    it('Verify money conversion works as expected', async() => {
+
+        /* 
+ ?      Manual testing steps:
+        1. Launch https://www.oanda.com
+        2. Click on 'See converter' link
+        3. Verify expected money conversion from Bitcoin to Dollars 
+        */
+
+        //? Automation steps:
+        // 1. Launch https://www.oanda.com
+
+        await browser.url('https://www.oanda.com');
+
+        // 2. Find required webElement 'See converter' link and perform click
+        const seeConverterLink = '//a[contains(text(),"See conv")]';
+        await seeConverterLink.click();
+
+        await browser.pause(2000);
+
+        // 3. Find required webElement in dropdown 'BTC' option and perform click
+        const openDropDown = '//button[@aria-label="Open"];
+        openDropDown.click();
+        
+
+    });
 
 })
 
