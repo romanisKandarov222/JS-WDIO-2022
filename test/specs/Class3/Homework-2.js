@@ -34,25 +34,24 @@ describe('Homework test cases:', () => {
         await browser.pause(2000);
 
         // 3. Get their text values
-        // logic of this case is not well-written, due to you have to change code line with month and day values
         const monthDropDown = await $('#month');
         var expectedMonth = '';
         if(monthDropDown) {
-            const currentMonth = await $('//option[contains(text(),"Nov")]');
+            const currentMonth = await $('//select[@aria-label="Month"]//option[@selected="1"]');
             expectedMonth = await currentMonth.getText();
         }
 
         const dayDropDown = await $('//select[@aria-label="Day"]');
         var expectedDay = '';
         if(dayDropDown) {
-            const currentDay = await $('//option[contains(text(),"21")]');
+            const currentDay = await $('//select[@aria-label="Day"]//option[@selected="1"]');
             expectedDay = await currentDay.getText();
         }
 
         const yearDropDown = await $('#year');
         var expectedYear = '';
         if(yearDropDown) {
-            const currentYear = await $('//option[contains(text(),"2022")]');
+            const currentYear = await $('//select[@aria-label="Year"]//option[@selected="1"]');
             expectedYear = await currentYear.getText();
         }
 
