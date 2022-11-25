@@ -135,38 +135,38 @@ describe('Homework test cases:', () => {
         const isKeepMeSignInSelected = await keepMeSignIn.isSelected();
         expect(isKeepMeSignInSelected, 'keepMeSignIn IS selected').to.be.false;
 
-        // 3. Find required webElement and perform click
+        // 4. Find required webElement and perform click
         const messengerLogIn = await $('//button[@name="login"]');
         await messengerLogIn.click();
 
         await browser.pause(2000);
-        // 4. Verify error "Find your account and log in." is displayed
+        // 5. Verify error "Find your account and log in." is displayed
         const errorFindYourAcc = await $('//a[contains(text(), "Find your")]');
         const isErrorFindYourAccDisplayed = await errorFindYourAcc.isDisplayed();
         expect(isErrorFindYourAccDisplayed, 'errorFindYourAcc IS NOT displayed').to.be.true;
 
-        // 5. Find required webElement 'Continue' and perform click
+        // 6. Find required webElement 'Continue' and verify it's enabled
         const continueButton = await $('//button[text() = "Continue"]');
         const isContinueButtonEnabled = await continueButton.isEnabled();
         expect(isContinueButtonEnabled, 'continueButton IS NOT enabled').to.be.true;
 
 
-        // 6. Find required webElement 'Keep me sign in' checkbox and verify it's not selected
+        // 7. Find required webElement 'Keep me sign in' checkbox and verify it's not selected
         const keepMeSignInBox = await $('//input[@type="checkbox"]')
         var isKeepMeSignInBoxSelected = await keepMeSignInBox.isSelected();
         expect(isKeepMeSignInBoxSelected, 'keepMeSignIn checkbox IS selected').to.be.false;
 
-        // 7. Find required webElement 'Keep me sign in' box and perform click
+        // 8. Find required webElement 'Keep me sign in' box and perform click
         const keepMeSignInBoxSelected = await $('//label[text()="Keep me signed in"]');
         await browser.pause(2000);
         await keepMeSignInBoxSelected.click();
 
         await browser.pause(2000);
 
-        // 8. Find required webElement 'Keep me sign in' checkbox and verify it's selected
+        // 9. Find required webElement 'Keep me sign in' checkbox and verify it's selected
         const keepMeSignInCheckBox = await $('//input[@type="checkbox"]');
         isKeepMeSignInBoxSelected = await keepMeSignInCheckBox.isSelected();
-        expect(isKeepMeSignInBoxSelected, 'keepMeSignIn checkbox IS NOT selected').to.be.true; // <- true statement gives an error
+        expect(isKeepMeSignInBoxSelected, 'keepMeSignIn checkbox IS NOT selected').to.be.true; 
 
     });
 
