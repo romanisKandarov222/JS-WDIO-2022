@@ -1,4 +1,3 @@
-const CreateNewAccount = require('../../POM/Facebook/LoginPage')
 const LoginErrorPage = require('../../POM/Facebook/LoginErrorPage');
 const { expect } = require('chai');
 

@@ -27,7 +27,6 @@ class CreateNewAccount {
 
     async compareDates() {
 
-        //const monthCurrent = await this.commands.findWebElement(this.monthDropDown);
         await this.commands.findWebElement(this.monthDropDown);
         var month = '';
         if(this.monthDropDown) {
@@ -51,13 +50,8 @@ class CreateNewAccount {
         
         var actualDate = month + ' ' + day + ' ' + year;
         var currentDate = particularDateFormat();
-        if(actualDate == currentDate) {
-            console.log(`${actualDate}`);
-            console.log(`${currentDate}`);
-            return true;
-        } else {
-            return false;
-        }
+        return actualDate == currentDate ? true : false;
+        
     }
     
 }
