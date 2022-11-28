@@ -84,7 +84,7 @@ describe('Practice test cases:', () => {
         await browser.pause(2000);
     });    
 
-    it('Verify money conversion works as expected', async() => {
+    it.only('Verify money conversion works as expected', async() => {
 
         /* 
  ?      Manual testing steps:
@@ -100,14 +100,18 @@ describe('Practice test cases:', () => {
 
         // 2. Find required webElement 'See converter' link and perform click
         const seeConverterLink = '//a[contains(text(),"See conv")]';
-        await seeConverterLink.click();
+        await $(seeConverterLink).click();
 
         await browser.pause(2000);
 
-        // 3. Find required webElement in dropdown 'BTC' option and perform click
-        const openDropDown = '//button[@aria-label="Open"];
-        openDropDown.click();
-        
+        // 3. Find required webElement in dropdown 'BTC'-option and perform click
+        const openDropDown = '//button[@aria-label="Open"]';
+        await $(openDropDown).click();
+
+        await browser.pause(3000);
+
+        const bitCoinOption = '//div[@id="cc-main-conversion-block"]//div[@class="flag flag-btc"]';
+        await $(bitCoinOption).click();
 
     });
 

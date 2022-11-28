@@ -171,23 +171,7 @@
  **          //h2[text()="November 2022"]/following-sibling::table//button[@data-day="25"] 
  * 
  * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+
  * 
  * 
  */
