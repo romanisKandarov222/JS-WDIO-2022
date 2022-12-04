@@ -2,17 +2,17 @@ const moment = require("moment");
 
 class Dates {
 
-    getCurrentDate() {
+    static getCurrentDate() {
         const now = moment();
         return now.format('D');
     }
 
-    getCurrentMonthNameInShort() {
+    static getCurrentMonthNameInShort() {
         const now = moment();
         return now.format('MMM');
     }
 
-    getCurrentYearNameInShort() {
+    static getCurrentYearNameInShort() {
         const now = moment();
         return now.format('YYYY');
     }
