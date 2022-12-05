@@ -1,11 +1,11 @@
+const LoginPage = require('../../POM/Facebook/LoginPage')
 const LoginErrorPage = require('../../POM/Facebook/LoginErrorPage');
-const LoginPage = require('../../POM/Facebook/LoginPage');
 const { expect } = require('chai');
 
 
 describe('Login Test Suite', () => {
     
-    it.only('Homework-3: Verify user gets error for invalid credentials', async () => {
+    it.only('Verify user gets error for invalid credentials', async () => {
         const loginPage = new LoginPage();
         const loginErrorPage = new LoginErrorPage();
 
@@ -28,7 +28,11 @@ describe('Login Test Suite', () => {
         
     });
 
-    it('', () => { });
+    it('', () => {
+        
+    });
 
- 
+    it('', () => {
+        
+    });
 });

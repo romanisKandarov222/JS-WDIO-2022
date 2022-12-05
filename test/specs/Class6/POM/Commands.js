@@ -24,6 +24,14 @@ class Commands {
         return await $(locator);
     }
 
+     /**
+     * Generic function to find webElements
+     * input: string(locator)
+     */
+      async findAllWebElements(locator) {
+        return await $$(locator);
+    }
+
     /**
      * Generic function to enter data in a WebElement
      * name: typeInWebElement
@@ -88,7 +96,6 @@ class Commands {
         return await $(locator).getAttribute(attrName);
     }
 
-
     async isWebElementSelected(locator) {
         return await $(locator).isSelected();
     }
@@ -97,18 +104,53 @@ class Commands {
         return await $(locator).isDisplayed();
     }
 
-
     /**
      * Generic function to select data in dropdown (using visible text)
      * name: selectDataInDropdown
      * input: string(locator dropdown), string(valueWantToSelect)
      */
 
-    async selectDataInDropdown(locator, dataToSelect) {
+     async selectDataInDropdown(locator, dataToSelect) {
         const dropdown = await $(locator);
         dropdown.selectByVisibleText(dataToSelect);
     }
 
+    /**
+     * Generic function to move mouse on any web-Element
+     * name: moveMouseOn
+     * input: locator
+     */
+    async moveMouse(locator) {
+        await $(locator).moveTo();
+    }
+
+    /**
+     * Generic function to get window handle
+     * name: getHandle
+     */
+
+    async getHandle() {
+        return await browser.getWindowHandle();
+    }
+
+    /**
+     * Generic function to get ALL window handles
+     * name: getHandles
+     */
+
+     async getHandles() {
+        return await browser.getWindowHandles();
+    }
+
+    /**
+     * Generic function to switch to a new handle
+     * name: switchToWindowHandle
+     * input: newHandle
+     */
+
+     async switchToWindowHandle(newHandle) {
+        return await browser.switchToWindow(newHandle);
+    }
 
 
 }
